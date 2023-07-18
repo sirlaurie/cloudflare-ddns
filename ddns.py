@@ -1,14 +1,15 @@
 import json
 import os
-import requests
+import httpx
 
 
 def get_ip() -> str:
     """
     get the ip address of whoever executes the script
     """
-    url = "http://ip.42.pl/raw"
-    response = requests.get(url)
+    url = "https://6.ipw.cn/"
+    response = httpx.get(url)
+    print(f"current ip: {response.text}")
     return str(response.text)
 
 
@@ -33,8 +34,10 @@ def set_ip(current_ip: str):
         "Content-Type": "application/json",
     }
 
-    payload = {"type": "A", "name": record_name, "content": current_ip}
-    response = requests.put(url, headers=headers, data=json.dumps(payload))
+    print(f"headers: {headers}")
+
+    payload = {"type": "AAAA", "name": record_name, "content": current_ip}
+    response = httpx.put(url, headers=headers, data=json.dumps(payload))
     print(response.status_code)
 
 

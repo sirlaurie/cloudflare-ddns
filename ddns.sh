@@ -1,3 +1,3 @@
-source /home/pi/cloudflare-ddns/.env
+source /root/cloudflare-ddns/.env
 
-/home/pi/cloudflare-ddns/venv/bin/python /home/pi/cloudflare-ddns/ddns.py
+/usr/bin/python /root/cloudflare-ddns/ddns.py
