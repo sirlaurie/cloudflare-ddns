@@ -34,8 +34,6 @@ def set_ip(current_ip: str):
         "Content-Type": "application/json",
     }
 
-    print(f"headers: {headers}")
-
     payload = {"type": "AAAA", "name": record_name, "content": current_ip}
     response = httpx.put(url, headers=headers, data=json.dumps(payload))
     print(response.status_code)
