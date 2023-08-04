@@ -44,7 +44,8 @@ def set_ip(current_ipv4: str, current_ipv6: str):
         % {"zone_id": zone_id, "record_id": aaaa_record_id}
     )
     payload = {"type": "AAAA", "name": record_name, "content": current_ipv6}
-    response = httpx.put(url, headers=headers, data=json.dumps(payload)) # type: ignore    print(response.status_code)
+    response = httpx.put(url, headers=headers, data=json.dumps(payload)) # type: ignore
+    print(response.status_code)
 
     a_record_id = os.environ.get("A_RECORD_ID")
     url = (

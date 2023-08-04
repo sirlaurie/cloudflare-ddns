@@ -1,6 +1,6 @@
-# cloudflare DDNS python script
+# cloudflare DDNS script
 
-A tiny python script that updates a cloudflare dns record with your current ip.
+A tiny python and shell script that updates a cloudflare dns record with your current ip.
 
 Useful for raspberry pi projects for example.
 
@@ -10,4 +10,8 @@ You need to put an `.env` file into `/home/pi/cloudflare-ddns` that looks like `
 
 Run `make` to install dependecies.
 
-You can then register a cronjob executing `/home/pi/cloudflare-ddns/ddns.sh` in an interval of choice.
+soure your `.env` before running script
+
+You can then register a cronjob executing `/home/pi/cloudflare-ddns/ddns.py` in an interval of choice.
+
+or executing `/home/pi/cloudflare-ddns/ddns.sh`
